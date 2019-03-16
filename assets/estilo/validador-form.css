@@ -1,0 +1,50 @@
+ol
+{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+.ketchup-error-container
+{
+    display: none;
+    position: absolute;
+    width: auto  !important;
+    z-index: 999999999;
+}
+.ketchup-error-container ol
+{
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    list-style: none;
+    line-height: 16px;
+}
+.ketchup-error-container span
+{
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom-left-radius: 25px;
+    border-top: 10px solid rgba(0,0,0,0.5);
+    border-bottom: 0;
+    margin-left: 10px;
+}
+.ketchup-error-container:hover
+{
+    cursor: pointer;
+}
+.notFilled
+{
+    border: 2px solid #f00;
+    background: #f99;
+}

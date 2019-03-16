@@ -1,0 +1,177 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+
+ 
+<link rel='stylesheet prefetch' href='uikit.almost-flat.min.css'>
+<style class="cp-pen-styles">.bt-form__wrapper 
+{
+  margin: 30px auto;
+  max-width: 500px;
+}
+.bt-flabels input[type] 
+{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 0;
+  z-index: 1;
+  -webkit-transition: background 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.bt-flabels input[type]:focus 
+{
+  background: #f5f8fc;
+}
+.bt-flabels label {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  -webkit-transform: translateY(15%);
+  transform: translateY(15%);
+  z-index: 2;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: capitalize;
+  padding-left: 6px;
+  color: #52a6e1;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.bt-flabels > *:not(:first-child).bt-flabels__wrapper,
+.bt-flabels > *:not(:first-child) .bt-flabels__wrapper {
+  border-top: none;
+}
+.bt-flabels__wrapper {
+  position: relative;
+  border: 1px solid #c8c8c8;
+}
+.bt-flabels__error-desc {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  opacity: 0;
+  font-weight: bold;
+  color: #f44545;
+  font-size: 10px;
+  text-transform: uppercase;
+  z-index: 3;
+  pointer-events: none;
+}
+.bt-flabels__error input[type] {
+  background: #feeeee;
+}
+.bt-flabels__error input[type]:focus {
+  background: #feeeee;
+}
+.bt-flabels__error .bt-flabels__error-desc {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.bt-flabels--right {
+  border-left: none;
+}
+.bt-flabel__float label {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.bt-flabel__float input[type] {
+  padding-top: 9px;
+}
+</style></head><body>
+<div class="bt-form__wrapper">
+  <form class="uk-form bt-flabels js-flabels" data-parsley-validate data-parsley-errors-messages-disabled>
+    <div class="uk-grid uk-grid-collapse">
+      <div class="uk-width-1-2">
+        <div class="bt-flabels__wrapper">
+          <label>First Name</label>
+          <input type="text" name="first_name" placeholder="First Name" autocomplete="off" data-parsley-required />
+          <span class="bt-flabels__error-desc">Required</span>
+        </div>
+      </div>
+      <div class="uk-width-1-2">
+        <div class="bt-flabels__wrapper bt-flabels--right">
+          <label>Last Name</label>
+          <input type="text" name="last_name" autocomplete="off" placeholder="Last Name" data-parsley-required />
+          <span class="bt-flabels__error-desc">Required</span>
+        </div>
+      </div>
+    </div>
+    <div class="bt-flabels__wrapper">
+      <label>Email</label>
+      <input type="text" name="email" placeholder="name@website.com" data-parsley-required data-parsley-type="email" autocomplete="off" />
+      <span class="bt-flabels__error-desc">Required/Invalid Email</span>
+    </div>
+    <div class="bt-flabels__wrapper">
+      <label>Phone (# used as password)</label>
+      <input type="text" name="phone" data-parsley-required placeholder="Phone (# used as password)" autocomplete="off" />
+      <span class="bt-flabels__error-desc">Required/Invalid Phone</span>
+    </div>
+    
+    <div class="uk-text-center uk-margin-top">
+      <button type="submit" class="uk-button uk-button-primary uk-button-large js-submit">Submit</button>
+    </div>
+  </form>
+  
+  
+</div>
+<script src='jquery.min.js'></script>
+<script src='parsley.min.js'></script>
+<script >'use strict';
+
+(function ($) {
+  'use strict';
+
+  var floatingLabel;
+
+  floatingLabel = function floatingLabel(onload) {
+    var $input;
+    $input = $(this);
+    if (onload) {
+      $.each($('.bt-flabels__wrapper input'), function (index, value) {
+        var $current_input;
+        $current_input = $(value);
+        if ($current_input.val()) {
+          $current_input.closest('.bt-flabels__wrapper').addClass('bt-flabel__float');
+        }
+      });
+    }
+
+    setTimeout(function () {
+      if ($input.val()) {
+        $input.closest('.bt-flabels__wrapper').addClass('bt-flabel__float');
+      } else {
+        $input.closest('.bt-flabels__wrapper').removeClass('bt-flabel__float');
+      }
+    }, 1);
+  };
+
+  $('.bt-flabels__wrapper input').keydown(floatingLabel);
+  $('.bt-flabels__wrapper input').change(floatingLabel);
+
+  window.addEventListener('load', floatingLabel(true), false);
+  $('.js-flabels').parsley().on('form:error', function () {
+    $.each(this.fields, function (key, field) {
+      if (field.validationResult !== true) {
+        field.$element.closest('.bt-flabels__wrapper').addClass('bt-flabels__error');
+      }
+    });
+  });
+
+  $('.js-flabels').parsley().on('field:validated', function () {
+    if (this.validationResult === true) {
+      this.$element.closest('.bt-flabels__wrapper').removeClass('bt-flabels__error');
+    } else {
+      this.$element.closest('.bt-flabels__wrapper').addClass('bt-flabels__error');
+    }
+  });
+})(jQuery);
+//# sourceURL=pen.js
+</script>
+</body></html>

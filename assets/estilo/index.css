@@ -1,0 +1,322 @@
+@font-face
+{
+  font-family:"Segoe UI";
+  src: url('../fonts/segoeui.ttf');
+}
+@font-face
+{
+  font-family:"Aero Matics Display Regular";
+  src: url('../fonts/Aero Matics Display Regular.ttf');
+}
+@font-face
+{
+  font-family:"Segoe UI SemiLight";
+  src: url('../fonts/segoeuisl.ttf');
+}
+@font-face
+{
+  font-family:"Segoe UI Light";
+  src: url('../fonts/segoeuil.ttf');
+}
+@font-face
+{
+  font-family:"Oswald-Bold";
+  src: url('../fonts/Oswald-Bold.ttf');
+}
+body
+{
+	font-family:"Segoe UI";
+	padding: 0;
+	margin: 0; 
+	background-image: url("../imagenes/fondo.jpg");
+	background-size: 100% 100%;
+}
+body.logout
+{
+    -moz-transform: scale(.7);
+    -webkit-transform: scale(.7);
+    -o-transform: scale(.7);
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+    opacity: 0;
+} 
+html , body
+{ 
+	width: 100%;
+	height: 100%; 
+	padding: 0;
+	margin:0;
+}
+
+.logo
+{
+  width: 140px;
+  height: 62px;
+  margin-right: 10px;
+  background-image: url("../imagenes/logo-login.png");
+  background-repeat: no-repeat; 
+  float: right;
+}
+.box_point
+{
+	position: absolute;
+	width: 320px;
+	height: 352px; 
+	background-color: white;
+	margin-left:auto;
+  margin-right:auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  left:0;
+  right:0;
+  top: 0;
+  bottom: 0; 
+  z-index: 2;  
+  border: 3px solid #bcbcbc;  
+  display: none;
+}
+.box_point_title
+{
+	font-family:"Segoe UI SemiLight";
+	width: 100%;
+	float: left;
+	color: #0272c3;
+	font-size: 18px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.box_point_title_line
+{
+	float: left;
+	width: 100%;
+	border-bottom: 3px solid #ececec;
+	margin-top: 5px;
+} 
+.container
+{
+  position: absolute;
+  width: 485px;
+  height: 340px;  
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  left:0;
+  right:0;
+  top: 0;
+  bottom: 0; 
+  z-index: 1;
+  border-radius: 10px;
+  background-image: url("../imagenes/img-login/bg-login.png");  
+}
+.container-header
+{
+   width: 100%;
+   height: 66px;
+   background-image: url("../imagenes/img-login/header-login.png");
+   float: left;
+}
+.container-body
+{
+   width: 100%;
+   height: 240px; 
+   float: left;
+   margin-top: 30px;
+}
+.container-footer
+{
+   width: 100%;
+   height: 56px;
+   background-color: gray;
+   float: left;
+   border-radius: 0px 0px 10px 10px;
+}
+* .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{
+    background:#0078d7 !important;
+    -webkit-box-shadow:1px 1px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow:1px 1px 5px rgba(0,0,0,0.5);
+    box-shadow:1px 1px 5px rgba(0,0,0,0.5);
+    margin-top: -6px;
+}
+.container-body 
+{ 
+   text-align: center;
+}
+input[type="text"]
+{
+   border-radius: 16px 16px 0px 0px;
+}
+input[type="password"]
+{
+   border-radius: 0px 0px 16px 16px;
+}
+input[type="text"] ,  input[type="password"]
+{	    
+	outline: none;
+	height: 70px;
+	width: 80%;  
+	margin-bottom: 5px;
+	font-size: 17px;
+  border: none;
+  color: #000; 
+  background-color: #cbcbcb;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Oswald-Bold";
+}
+.boton
+{   
+  border-radius: 16px;
+  background-image: -moz-linear-gradient( 84deg, rgb(25,25,24) 0%, rgb(81,81,81) 100%);
+  background-image: -webkit-linear-gradient( 84deg, rgb(25,25,24) 0%, rgb(81,81,81) 100%);
+  background-image: -ms-linear-gradient( 84deg, rgb(25,25,24) 0%, rgb(81,81,81) 100%);
+  box-shadow: 0px 1px 0px 0px rgba(255, 179, 0, 4);
+  float: right; 
+  margin-right: 50px;
+  color: white;
+  width: 100px;
+  height: 47px; 
+  border: none;
+  outline: none;
+  font-family: "Oswald-Bold";
+ 
+}
+.boton:active
+{
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 4);
+}
+.supercapa
+{    
+    background-color:rgba(0,0,0,0.9);
+    opacity: 0.9;
+    z-index: 4;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    position: fixed;
+    display: none;  
+}
+/* do not group these rules */
+*::-webkit-input-placeholder {
+    color: black;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: black;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: black;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: black;
+}
+.cargando
+{
+    position: absolute;    
+    height: 150px;
+    width: 150px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left:0;
+    right:0;
+    top: 0;
+    bottom: 0; 
+    position: absolute;
+    z-index: 5;
+    background-color: transparent;
+    border-radius: 10px;  
+    line-height: 6;
+    font-size: 12px;
+    text-align: center; 
+    color: #000;
+    font-size: 16px; 
+    display: none;
+}
+.btn 
+{
+  width: 308px;
+  height: 60px;
+  margin:0;
+  padding: 0;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center; 
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem; 
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
+
+.btn:focus, .btn.focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+}
+
+.btn.disabled, .btn:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+.btn:active, .btn.active {
+  background-image: none;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #025aa5;
+  border-color: #01549b;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary:active, .btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #025aa5;
+  background-image: none;
+  border-color: #01549b;
+}
+
+
+
